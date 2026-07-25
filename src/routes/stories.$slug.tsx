@@ -47,7 +47,7 @@ function StoryDetail() {
         <div className="relative z-10 mx-auto flex min-h-screen max-w-[1500px] flex-col justify-end px-6 lg:px-12 pb-20 pt-40">
           <div className="eyebrow text-gold mb-6">{story.chapter} · {story.year}</div>
           <h1 className="font-display text-[12vw] md:text-[9rem] leading-[0.88] max-w-6xl">
-            {story.couple.split(" & ").map((n, i, arr) => (
+            {story.couple.split(" & ").map((n: string, i: number, arr: string[]) => (
               <span key={i}>
                 {n}
                 {i < arr.length - 1 && <span className="italic text-gold"> & </span>}
