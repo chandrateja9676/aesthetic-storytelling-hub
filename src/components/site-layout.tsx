@@ -58,19 +58,10 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                 key={item.to}
                 to={item.to}
                 activeOptions={{ exact: item.to === "/" }}
-                className="text-[13px] uppercase tracking-[0.22em] text-ink/70 transition hover:text-ink relative py-1"
-                activeProps={{ className: "text-ink" }}
+                className="group text-[13px] uppercase tracking-[0.22em] text-ink/70 transition hover:text-ink relative py-1 data-[status=active]:text-ink"
               >
-                {({ isActive }) => (
-                  <>
-                    {item.label}
-                    <span
-                      className={`absolute -bottom-0.5 left-0 h-px bg-gold transition-all duration-500 ${
-                        isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    />
-                  </>
-                )}
+                {item.label}
+                <span className="absolute -bottom-0.5 left-0 h-px bg-gold transition-all duration-500 w-0 group-hover:w-full group-data-[status=active]:w-full" />
               </Link>
             ))}
           </nav>
